@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+ <h1>Ninja Gold</h1>
+    </head>
+    <body>
+        <form action="/process_money" method="GET">
+            {% csrf_token %}
+            <p class="response">Your Gold:{{request.session.gold}}</p>
+            <p>Your Log: {{request.session.Log}}</p>
+        </form>
+               <p>Farm</p>
+               <p>Earns 10-20 Gold</p>
+            <form action="/process_money/farm" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="building" value="farm" />
+                <input type="submit" value="Find Gold!"/>
+              </form>
+                <p>Cave</p>
+                <p>Earns 5-10 Gold </p>
+                
+              <form action="/process_money/cave" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="building" value="cave" />
+                <input type="submit" value="Find Gold!"/>
+              </form>
+              <p>House</p>
+              <p>Earns 2-5 Gold </p>
+             
+              <form action="/process_money/house" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="building" value="house" />
+                <input type="submit" value="Find Gold!"/>
+              </form>
+              <p>Casino</p>
+              <p>Earns 0-50000000 Gold</p>
+              <form action="/process_money/casino" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="building" value="casisno" />
+                <input type="submit" value="Find Gold!"/>
+              </form>
+            </form>
+              
+
+        </form>
+    </body>
+</html>
